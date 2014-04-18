@@ -8,10 +8,13 @@ class TodosController < ApplicationController
   end
 
   def create
-    
+
   end
 
   def show
+    puts "@@@@@@@@@@@@@Params hash:#{params.inspect}"
+    puts "#{params["id"]}"
+    @todo = Todo.find(params["id"])
   end
 
   def edit

@@ -1,6 +1,4 @@
 <h1>Todos Items List</h1>
 <% @todos.each do |todo| %>
-
- <p>Title: <%= todo["title"]%>; Description: <%= todo["description"]%>; Done: <%= todo["done"]%></p>
-
+  <p><input type="checkbox" id="<%= todo['id']%>"><%= link_to todo["title"], todo_path(todo[:id]) %></p>
 <% end %>
