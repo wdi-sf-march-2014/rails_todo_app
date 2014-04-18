@@ -10,8 +10,8 @@ class TodosController < ApplicationController
   def create
     # binding.pry
     Todo.create(title: params[:todo][:title], description: params[:todo][:description], done: false)
-    @todos = Todo.all
-    render :index
+    # @todos = Todo.all
+    redirect_to action: 'index'
   end
 
   def show
