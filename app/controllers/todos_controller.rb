@@ -8,13 +8,15 @@ class TodosController < ApplicationController
   end
 
   def create
-
+    # binding.pry
+    Todo.create(title: params[:todo][:title], description: params[:todo][:description], done: false)
+    @todos = Todo.all
+    render :index
   end
 
   def show
-    puts "@@@@@@@@@@@@@Params hash:#{params.inspect}"
-    puts "#{params["id"]}"
-    @todo = Todo.find(params["id"])
+    # binding.pry
+    @todo = Todo.find(params[:id])
   end
 
   def edit
