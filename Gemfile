@@ -32,9 +32,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-  gem 'pry'
-  gem 'pry-rails'
-  gem 'dotenv-rails'
+gem 'pry'
+gem 'pry-rails'
+gem 'dotenv-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

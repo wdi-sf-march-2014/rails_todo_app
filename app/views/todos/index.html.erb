@@ -1,8 +1,22 @@
-<h1>Todos Items List</h1>
-<%= link_to "New Todo", new_todo_path %>
+
+<!-- Button to new method in controller -->
+    <!-- <input type="checkbox" id="<%#= todo['id']%>">-->
+<%= button_to "new todo item", {controller: :todos, action: :new}, :method => :get %>
+<!-- Link to new method in controller -->
+<!-- <%#= link_to "New Todo", new_todo_path %></br> -->
+<h2>Todos Items List</h2>
+
 <% @todos.each do |todo| %>
-  <p><input type="checkbox" id="<%= todo['id']%>"><%= link_to todo["title"], todo_path(todo[:id]) %> 
+  
+  <%= link_to todo["title"], todo_path(todo[:id]) %>  
+
+  <%= button_to "edit", {controller: :todos, action: :edit, id: todo.id }, :method => :get %>
+  <%= button_to "delete", {controller: :todos, action: :destroy, id: todo.id }, :method => :delete,
+    data: { confirm: "You sure?"},
+    title: todo.title %>
+  
   <%= link_to "edit", edit_todo_path(todo[:id]) %> 
-  <%= link_to "delete", 'todos/todo[:id]' %></p>
+  <%= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" } %>
+  </br>
   
 <% end %>

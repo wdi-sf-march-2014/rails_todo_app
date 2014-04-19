@@ -4,3 +4,12 @@
   <%= label_tag(:description, "Description") %> <%= f.text_area :description %></br>
   <%= f.submit "Create" %>
 <% end %>
+
+<hr>
+<!-- using form_for and button_for may be too much abstraction at this point -->
+<!-- should just use html form tags and button tags -->
+<!-- <form action="/todos" method="post">
+  Title: <input name='title' type="text" /><br>
+  Description: <input name='description' type="text_area" /><br>
+  <input name="commit" type="submit" value="Create" />
+</form> -->
