@@ -1,2 +1,7 @@
-<h1>Todos#edit</h1>
-<p>Find me in app/views/todos/edit.html.erb</p>
+<h1>Edit Your Todo</h1>
+<%#= @todo.inspect %>
+<%= form_for @todo do |f| %>
+  <%= label_tag(:title, "Title:") %> <%= f.text_field :title %></br>
+  <%= label_tag(:description, "Description") %> <%= f.text_area :description %></br>
+  <%= f.submit "Update" %>
+<% end %>

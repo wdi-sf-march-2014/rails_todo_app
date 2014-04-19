@@ -10,7 +10,6 @@ class TodosController < ApplicationController
   def create
     # binding.pry
     Todo.create(title: params[:todo][:title], description: params[:todo][:description], done: false)
-    # @todos = Todo.all
     redirect_to action: 'index'
   end
 
@@ -20,11 +19,17 @@ class TodosController < ApplicationController
   end
 
   def edit
+    # binding.pry
+    @todo = Todo.find(params[:id])
   end
 
   def update
+    Todo.create(title: params[:todo][:title], description: params[:todo][:description], done: false)
+    redirect_to action: 'index'
   end
 
   def destroy
+    Todo.delete(params[:id])
+    redirect_to action: 'index'
   end
 end
