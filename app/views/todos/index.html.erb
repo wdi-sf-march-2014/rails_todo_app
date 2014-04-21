@@ -5,15 +5,15 @@
 <!-- Link to new method in controller -->
 <!-- <%#= link_to "New Todo", new_todo_path %></br> -->
 <h1>Todos Items List</h1>
-<%= button_to "new todo item", {controller: :todos, action: :new}, :method => :get, :class => "btn btn-success" %>
+<%= button_to "New Todo Item", {controller: :todos, action: :new}, :method => :get, :class => "btn btn-success" %>
 <br>
 
 <% @todos.each do |todo| %>
 
   <%= link_to todo["title"], todo_path(todo[:id]) %>
 
-  <%= link_to "edit", edit_todo_path(todo[:id]) %>
-  <%= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" } %>
+  <%= link_to "edit", edit_todo_path(todo[:id]) , :class => "btn btn-primary btn-xs" %>
+  <%= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" } , :class => "btn btn-danger btn-xs" %>
   <br>
   </br>
 
