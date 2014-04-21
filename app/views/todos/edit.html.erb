@@ -1,7 +1,9 @@
 <h1>Edit Your Todo</h1>
 <%#= @todo.inspect %>
 <%= form_for @todo do |f| %>
-  <%= label_tag(:title, "Title:") %> <%= f.text_field :title %></br>
-  <%= label_tag(:description, "Description") %> <%= f.text_area :description %></br>
-  <%= f.submit "Update" %>
+  <%= label_tag(:title, "Title:") %>
+  <%= f.text_field :title, :class => "form-control" %></br>
+  <%= label_tag(:description, "Description") %>
+  <%= f.text_area :description, :class => "form-control" %></br>
+  <%= f.submit "Update", :class => "btn btn-danger" %>
 <% end %>
