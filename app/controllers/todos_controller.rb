@@ -19,7 +19,7 @@ class TodosController < ApplicationController
     
     # binding.pry
     Todo.create todo_params
-    redirect_to @todo
+    redirect_to action: :index
   end
 
   def show
@@ -55,6 +55,7 @@ class TodosController < ApplicationController
    # Delete a single record in the database. 
    # Redirects the view to the index page.
 
+   # binding.pry
    Todo.find(params[:id]).destroy
    redirect_to action: :index
   end
