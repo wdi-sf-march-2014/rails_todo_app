@@ -17,3 +17,10 @@
   <%= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" } , :class => "btn btn-danger btn-xs" %>
   <br>
 <% end %>
+ <hr>
+Todo Inspect: <%= @todos.inspect %>
+<hr>
+<% @todos.each do |todo| %>
+<li><%= todo.inspect %></li>
+ <% end %>
+
