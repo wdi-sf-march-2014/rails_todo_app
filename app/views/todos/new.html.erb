@@ -1,16 +1,15 @@
+<!-- new.html.erb has access to the empty Todo object stored in the
+     instance variable @todo that it received from 
+     the new method in TodosController. -->
 <h1>Create a New Todo</h1>
 <%= form_for @todo do |f| %>
+  
   <%= label_tag(:title, "Title:") %>
   <%= f.text_field :title,  :class => "form-control" %></br>
-  <%= label_tag(:description, "Description") %> <%= f.text_area :description, :class => "form-control" %></br>
+
+  <%= label_tag(:description, "Description") %> 
+  <%= f.text_area :description, :class => "form-control" %></br>
+
+  <!-- Submits the @todo object with the inputs to the create method in the TodosController. -->
   <%= f.submit "Create", :class => "btn btn-danger" %>
 <% end %>
-
-<hr>
-<!-- using form_for and button_for may be too much abstraction at this point -->
-<!-- should just use html form tags and button tags -->
-<!-- <form action="/todos" method="post">
-  Title: <input name='title' type="text" /><br>
-  Description: <input name='description' type="text_area" /><br>
-  <input name="commit" type="submit" value="Create" />
-</form> -->

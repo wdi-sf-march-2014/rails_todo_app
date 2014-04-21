@@ -1,20 +1,19 @@
-
-<!-- Button to new method in controller -->
-    <!-- <input type="checkbox" id="<%#= todo['id']%>">-->
-
-<!-- Link to new method in controller -->
-<!-- <%#= link_to "New Todo", new_todo_path %></br> -->
 <h1>Todos Items List</h1>
+<!-- index.html.erb has access to the @todos instance variable from
+     the index method in the controller. -->
+
+<!-- Button to the new method in the controller -->
 <%= button_to "New Todo Item", {controller: :todos, action: :new}, :method => :get, :class => "btn btn-success" %>
 <br>
 
 <% @todos.each do |todo| %>
-
+  <!-- Link to the show method in the controller -->
   <%= link_to todo["title"], todo_path(todo[:id]) %>
 
+  <!-- Link to the edit method in the controller -->
   <%= link_to "edit", edit_todo_path(todo[:id]) , :class => "btn btn-primary btn-xs" %>
+
+  <!-- Link to the delete method in the controller -->
   <%= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" } , :class => "btn btn-danger btn-xs" %>
   <br>
-  </br>
-
 <% end %>

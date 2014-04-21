@@ -1,9 +1,16 @@
+<!-- edit.html.erb has the @todo instance variable that the edit method
+     in the TodosController prepared. -->
+
 <h1>Edit Your Todo</h1>
-<%#= @todo.inspect %>
 <%= form_for @todo do |f| %>
+
   <%= label_tag(:title, "Title:") %>
   <%= f.text_field :title, :class => "form-control" %></br>
+
   <%= label_tag(:description, "Description") %>
   <%= f.text_area :description, :class => "form-control" %></br>
+
+  <!-- Submits the @todo instance variables changes to the update
+       method in the TodosController. -->
   <%= f.submit "Update", :class => "btn btn-warning" %>
 <% end %>

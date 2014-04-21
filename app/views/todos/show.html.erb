@@ -1,6 +1,8 @@
+<!-- show.html.erb has access to the @todo variable from the 
+     show method in TodosController. -->
 <h1>Todo Show Page</h1>
 <p>Title: <%= @todo['title']%></p>
 <p>Description: <%= @todo['description']%></p>
-<!-- add link to back to index -->
+<!-- link to the index method in the controller -->
 <%= link_to "Back To Todo List",todos_path%>
 
