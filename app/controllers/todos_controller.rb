@@ -15,11 +15,12 @@ class TodosController < ApplicationController
 
   def create
     # Creates a todo item in the database with the information passed in
-    # the params hash. Redirects to the show page.
+    # the params hash. Redirects to the show page using the todo_path
+    # and passing the @todo object.
     
     # binding.pry
-    Todo.create todo_params
-    redirect_to action: :index
+    @todo = Todo.create todo_params
+    redirect_to todo_path(@todo)
   end
 
   def show
@@ -42,22 +43,23 @@ class TodosController < ApplicationController
 
   def update
     # Retrieves a specific item from the database. The id of the item is in
-    # the params hash. Updates the database with the contents of the params hash.
-    # Redirects the view to the show page.
+    # the params hash. Updates the database with the contents of the params 
+    # hash. Redirects to the show page using the todo_path and passing 
+    # the @todo object.
 
     # binding.pry
     @todo = Todo.find(params[:id])
     @todo.update todo_params
-    redirect_to @todo
+    redirect_to todo_path(@todo)
   end
 
   def destroy
    # Delete a single record in the database. 
-   # Redirects the view to the index page.
+   # Redirects the view to the root page using the root_path.
 
    # binding.pry
    Todo.find(params[:id]).destroy
-   redirect_to action: :index
+   redirect_to root_path
   end
 
   private
