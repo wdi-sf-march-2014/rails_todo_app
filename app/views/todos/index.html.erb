@@ -1,20 +1,25 @@
 <h1>Todos Items List</h1>
-<!-- index.html.erb has access to the @todos instance variable from
-     the index method in the controller. -->
+<!-- 
+    index.html.erb has access to the @todos instance variable from
+    the index method in the controller. 
+
+     @todos is an array of todo objects from our database.  -->
 
 <!-- Button to the new method in the controller -->
 <%= button_to "New Todo Item", {controller: :todos, action: :new}, :method => :get, :class => "btn btn-success" %>
 <br>
 
 <% @todos.each do |todo| %>
-  <!-- Link to the show method in the controller -->
+
+  <!-- Link to the show method in the controller rails style. -->
   <%= link_to todo["title"], todo_path(todo[:id]) %>
+  <%#= link_to todo.title, todo_path(todo[:id]) %> <!-- alt hash style -->
 
   <!-- Link to the edit method in the controller -->
-  <%= link_to "edit", edit_todo_path(todo[:id]) , :class => "btn btn-primary btn-xs" %>
+  <%#= link_to "edit", edit_todo_path(todo[:id]) , :class => "btn btn-primary btn-xs" %>
 
   <!-- Link to the delete method in the controller -->
-  <%= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" } , :class => "btn btn-danger btn-xs" %>
+  <%#= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" } , :class => "btn btn-danger btn-xs" %>
   <br>
 <% end %>
  <hr>

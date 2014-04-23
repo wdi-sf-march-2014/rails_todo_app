@@ -5,10 +5,22 @@ class TodosController < ApplicationController
     # Prepares the @todos instance variable for the index.html.erb page.
     
     @todos = Todo.all
+    # binding.pry
+    # Exercise: 
+    # 1) Uncomment line 8 
+    # 2) While in pry, go through the @todos instance variable and 
+    #    print out the title of each todo item.
+    # 3) Practice accessing the title with both coding styles:
+    #    todos["title"] and todos.title. 
+    # 4) Comment out line 8
+    # 5) Which coding style do you like better?
+    #    Which way do you think JavaScript does it? Can you find out?
+    # 6) Comment out line 8.
   end
 
   def new
-    #Make an empty Todo object (@todo) for the form on the new.html.erb page.
+    # Makes an empty Todo object (@todo) for the form on the 
+    # new.html.erb page.
     
     @todo = Todo.new
   end
@@ -30,6 +42,13 @@ class TodosController < ApplicationController
 
     # binding.pry
     @todo = Todo.find(params[:id])
+    # binding.pry
+    # Exercise 2: 
+    # 1) Uncomment line 43
+    # 2) In pry, check the content of the params hash. What is params[:id]?
+    # 3) Comment out line 43. Uncomment line 45.
+    # 4) In pry, display the title and description of the @todo item.
+    # 5) Comment out line 45.
   end
 
   def edit
@@ -44,8 +63,8 @@ class TodosController < ApplicationController
   def update
     # Retrieves a specific item from the database. The id of the item is in
     # the params hash. Updates the database with the contents of the params 
-    # hash. Redirects to the show page using the todo_path and passing 
-    # the @todo object.
+    # hash through the use of a private method. Redirects to the show page 
+    # using the todo_path and passing the @todo object.
 
     # binding.pry
     @todo = Todo.find(params[:id])
