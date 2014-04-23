@@ -6,7 +6,7 @@ class TodosController < ApplicationController
     
     @todos = Todo.all
     # binding.pry
-    # Exercise: 
+    # Exercise 1: 
     # 1) Uncomment line 8 
     # 2) While in pry, go through the @todos instance variable and 
     #    print out the title of each todo item.
