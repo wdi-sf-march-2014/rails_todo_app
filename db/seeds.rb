@@ -7,8 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 two_weeks_ago = Date.today.weeks_ago 2
 
-two_weeks_ago = Date.today.weeks_ago 2
-
 todos = Todo.create([
   {title: "Buy Groceries", description: "Go to Safeway, don't forget the coupons.", created_at: two_weeks_ago, updated_at: two_weeks_ago},
 
