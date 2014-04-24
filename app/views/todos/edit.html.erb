@@ -10,10 +10,10 @@
   <%= label_tag(:description, "Description") %>
   <%= f.text_area :description, :class => "form-control" %></br>
 
+  <%= label_tag(:done, "Done?") %>
+  <%= f.check_box :done, {}, true, false %><br />
+
   <!-- Submits the @todo instance variables changes to the update
        method in the TodosControll -->
   <%= f.submit "Update", :class => "btn btn-warning" %>
 <% end %>
-
-<hr>
-Todo Inspect: <%= @todo.inspect %>

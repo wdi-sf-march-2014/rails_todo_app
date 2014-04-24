@@ -5,7 +5,9 @@ TodoApp::Application.routes.draw do
   # index is the method
   root 'todos#index'
 
+  get '/recent', to: 'todos#recent'
   resources :todos
+
 
 #Spencers-MacBook-Pro-2:todo_app Spencer$ rake routes
 #    Prefix Verb   URI Pattern               Controller#Action

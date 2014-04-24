@@ -1,9 +1,9 @@
-<h1>Todos Items List</h1>
+<h1>Today's Todo Items</h1>
 <!-- index.html.erb has access to the @todos instance variable from
      the index method in the controller. -->
 
 <!-- Button to the new method in the controller -->
-<%= button_to "Today's Todo Items", {controller: :todos, action: :recent}, :method => :get, :class => "btn btn-success" %><br />
+<%= button_to "All Todo Items", {controller: :todos, action: :index}, :method => :get, :class => "btn btn-success" %><br />
 <%= button_to "New Todo Item", {controller: :todos, action: :new}, :method => :get, :class => "btn btn-success" %>
 <br>
 
@@ -18,5 +18,3 @@
   <%= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" } , :class => "btn btn-danger btn-xs" %>
   <br>
 <% end %>
-
-
