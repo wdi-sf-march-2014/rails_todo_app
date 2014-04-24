@@ -89,6 +89,6 @@ class TodosController < ApplicationController
   private
     # Prepare the params hash for create and update methods.
     def todo_params
-      params.require(:todo).permit(:title, :description)
+      params.require(:todo).permit(:title, :description, :done)
     end
 end
