@@ -82,7 +82,8 @@ class TodosController < ApplicationController
   end
 
   def recent
-    @todos = Todo.all
+    # Prefered way of getting recent todos.  Use the database!
+    @todos = Todo.all_todos_modified_after(Date.today)
   end
 
   private
