@@ -9,4 +9,12 @@ class Todo < ActiveRecord::Base
   def self.all_todos_modified_after(date)
     Todo.where("updated_at > ?", [date])
   end
+
+  def self.alphabetize
+    Todo.order(:title)
+  end
+
+  def self.outdated
+    Todo.where('created_at < ?', (Time.now - 1.month))
+  end
 end

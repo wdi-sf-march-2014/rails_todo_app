@@ -38,6 +38,10 @@ end
 gem 'pry'
 gem 'pry-rails'
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+
 # gem 'dotenv-rails'
 
 # Use ActiveModel has_secure_password
