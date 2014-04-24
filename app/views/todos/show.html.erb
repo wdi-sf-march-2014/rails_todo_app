@@ -3,8 +3,13 @@
 <h1>Todo Show Page</h1>
 <p>Title: <%= @todo['title']%></p>
 <p>Description: <%= @todo['description']%></p>
-<!-- link to the index method in the controller -->
+
+<!-- The following if statement will continue to be -->
+<!-- nil, until we add data to done in the DB. -->
+<% if @todo['done'] %>
+  <p>Done!</p>
+<% else %>
+  <p>Still not done!</p>
+<% end %>
 <%= link_to "Back To Todo List",todos_path%>
 
-<hr>
-Todo Inspect: <%= @todo.inspect %>

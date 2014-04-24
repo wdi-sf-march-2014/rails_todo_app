@@ -81,6 +81,10 @@ class TodosController < ApplicationController
    redirect_to root_path
   end
 
+  def recent
+    @todos = Todo.all
+  end
+
   private
     # Prepare the params hash for create and update methods.
     def todo_params
