@@ -22,11 +22,13 @@ describe "Todos Management" do
   describe 'listing recent todos' do
     it 'lists recent todos at path /recent' do
       todo = Todo.create(title: "my title", description: "my description")
+      todo = Todo.create(title: "my other title", description: "my description",
+        updated_at: (Date.today - 1.month))
 
       get "/recent"
       expect(response).to render_template(:recent)
-
       expect(response.body).to include("my title")
+      expect(response.body).to_not include("my other title")
     end
   end
 end
