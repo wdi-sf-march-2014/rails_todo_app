@@ -1,7 +1,10 @@
 class Todo < ActiveRecord::Base
+ def self.all_todos_modified_after(date)
+    Todo.where("updated_at > ?", [date])
+  end 
 end
 
-# MIGRATIONS: Rails provides a domain-specific language for managing a database schema called migrations. Migrations are stored 
-# in files which are executed against any database that Active Record supports using rake.
+#### NOTES: ####
 
-# CALLBACKS: 
+# MIGRATIONS: A migration keeps track of all the changes you've made in the database. 
+# It allows developers to collaborate on the database without passing around SQL scripts.

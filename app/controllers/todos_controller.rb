@@ -82,7 +82,10 @@ class TodosController < ApplicationController
   end
 
   def recent
-    @todo = Todo.all
+    @todos = Todo.all_todos_modified_after(Date.today)
+
+    # Logic to display all recent todos for just controller: 
+    # @todos = Todo.all.select {|row| row.updated_at > Date.today }
   end
 
   # Question: Active record query => Todo.where('created_at < ?', Date.today )
