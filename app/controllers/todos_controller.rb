@@ -82,8 +82,10 @@ class TodosController < ApplicationController
   end
 
   def recent
-    @todos = Todo.all
+    @todo = Todo.all
   end
+
+  # Question: Active record query => Todo.where('created_at < ?', Date.today )
 
   private
     # Prepare the params hash for create and update methods.
